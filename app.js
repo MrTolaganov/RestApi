@@ -13,7 +13,7 @@ app.use(express.static(resolve(__dirname, "client")));
 // GET method
 app.get("/api/contacts", (req, res) => {
   setTimeout(() => {
-    res.status(200).json({ message: "Contact was deleted succesfully" });
+    res.status(200).json(contacts);
   }, 2000);
 });
 
@@ -27,7 +27,7 @@ app.post("/api/contacts", (req, res) => {
 // DELETE method
 app.delete("/api/contacts/:id", (req, res) => {
   contacts = contacts.filter(contact => contact.id !== req.params.id);
-  res.status(200).json(contacts);
+  res.status(200).json({ message: "Contact was deleted successfully" });
 });
 
 // PUT method
