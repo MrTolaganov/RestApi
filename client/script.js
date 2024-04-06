@@ -53,7 +53,6 @@ new Vue({
   async mounted() {
     this.loading = true;
     const data = await request("/api/contacts");
-    console.log(data);
     this.contacts = data;
     this.loading = false;
   },
